@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dhaval Mandaviya | Web Developer & UI/UX Designer</title>
+  <title>Dhaval Mandaviya</title>
   
   <!-- CSS Link -->
   <link rel="stylesheet" href="style-md.css">
@@ -48,7 +48,7 @@
     
     /* iOS Glassmorphism & Borders */
     --card-bg: rgba(255, 255, 255, 0.65);
-    --card-border: rgba(255, 255, 255, 0.7);
+    --card-border: rgba(198, 198, 198, 0.7);
     --glass-bg: rgba(255, 255, 255, 0.45);
     --glass-border: rgba(255, 255, 255, 0.5);
     
@@ -916,7 +916,7 @@ a, button, input, textarea {
 
 @media (min-width: 1024px) {
     .social-bento {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -940,22 +940,29 @@ a, button, input, textarea {
 }
 
 .social-icon {
-    font-size: 2.7rem;
+    font-size: 3rem;
     margin-bottom: 12px;
     transition: var(--transition);
 }
 
 .social-info h4 {
-    font-size: 15px;
+    font-size: 25px;
     font-weight: 800;
     margin-bottom: 3px;
     letter-spacing: -0.2px;
 }
 
 .social-info p {
-    font-size: 12.5px;
     color: var(--text-muted);
     font-weight: 600;
+    border: 1px solid;
+    padding: 4px 25px;
+    border-radius: 99px;
+    transition: all 0.2s ease-in-out;
+}
+.social-info p:hover {
+    background-color: black;
+    color: white;
 }
 
 /* Individual Social Hover Styles (iOS Light Shadows) */
@@ -1453,13 +1460,13 @@ textarea.form-input {
       <div class="grid">
         <div class="project-card radius">
           <div class="img-box">
-            <img class="image-1" src="https://i.pinimg.com/736x/7c/5b/ac/7c5bac6c1789f41be122a2508412ce06.jpg" alt="Developer Dashboard Project">
+            <img class="image-1" src="https://i.pinimg.com/1200x/05/21/1e/05211e97daed89bf46c9bb9eea1e4820.jpg" alt="Developer Dashboard Project">
           </div>
           <div class="project-card-tags">
             <span class="project-tag">GitHub</span>
             <span class="project-tag">All project</span>
           </div>
-          <h3 class="project-title">All Project</h3>
+          <h3 class="project-title">GitHub</h3>
           <p>View my all projects in GitHub. Also view a source code and learn the project. I upload my all projects work in GitHub, so yo can esaily find a code and project for more ideas. </p>
           <button class="project-btn">
             <a href="https://github.com/dhavalmandaviya" target="_blank" rel="noopener">Launch App <i class="fa-solid fa-arrow-right"></i></a>
@@ -1588,7 +1595,6 @@ textarea.form-input {
     </div>
     <div class="footer-bottom">
       <p>&copy; 2026 Dhaval Mandaviya. All rights reserved.</p>
-      <p>Designed with <i class="fa-solid fa-heart" style="color: #ef4444;"></i> using HTML & CSS</p>
     </div>
   </footer>
 
