@@ -1,0 +1,376 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>About | Built for India's young earners (redesign concept)</title>
+<meta name="description" content="Funngro was founded to give every young Indian a real first income.">
+<meta name="theme-color" content="#ffe94a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --lemon:#ffe94a;
+  --ink:#0d0d12;
+  --ink-2:#55555f;
+  --snow:#fffdf2;
+  --teal:#00a88f;
+  --red:#ff3b30;
+  --sky:#b8e4ff;
+  --display:'Unbounded',system-ui,sans-serif;
+  --body:'Manrope',system-ui,sans-serif;
+  --gutter:clamp(18px,4vw,44px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:var(--body);background:var(--snow);color:var(--ink);line-height:1.6;font-size:1.0625rem;overflow-x:hidden}
+svg,img{display:block;max-width:100%}
+a{color:inherit}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:4px}
+.wrap{width:min(1240px,100% - var(--gutter)*2);margin-inline:auto}
+
+/* top bar */
+.bar{position:fixed;inset:0 0 auto 0;z-index:80;background:var(--lemon);border-bottom:3px solid var(--ink)}
+.bar-in{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:var(--display);font-weight:900;font-size:1.25rem;text-decoration:none;letter-spacing:-.04em;display:flex;align-items:center;gap:10px}
+.logo i{width:26px;height:26px;background:var(--ink);border-radius:8px 50% 8px 50%;display:inline-block;transition:transform .5s}
+.logo:hover i{transform:rotate(180deg)}
+.menu{display:flex;list-style:none;align-items:center;gap:4px}
+.menu a{text-decoration:none;font-weight:700;font-size:.95rem;padding:8px 14px;border-radius:999px}
+.menu a:hover{background:var(--ink);color:var(--lemon)}
+.btn{display:inline-flex;align-items:center;justify-content:center;text-decoration:none;font-family:var(--display);font-weight:700;font-size:.9rem;padding:14px 26px;border:3px solid var(--ink);border-radius:999px;background:var(--ink);color:var(--lemon);box-shadow:5px 5px 0 var(--red);transition:transform .15s,box-shadow .15s}
+.btn:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--red)}
+.btn:active{transform:translate(4px,4px);box-shadow:1px 1px 0 var(--red)}
+.btn.light{background:var(--snow);color:var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.btn.light:hover{box-shadow:8px 8px 0 var(--ink)}
+.btn.sm{padding:9px 18px;font-size:.78rem;box-shadow:3px 3px 0 var(--red)}
+.burger{display:none;width:46px;height:46px;border:3px solid var(--ink);border-radius:12px;background:var(--snow);position:relative}
+.burger span{position:absolute;left:10px;right:10px;height:3px;background:var(--ink);border-radius:2px;transition:transform .25s,opacity .25s}
+.burger span:nth-child(1){top:11px}.burger span:nth-child(2){top:19px}.burger span:nth-child(3){top:27px}
+.burger[aria-expanded="true"] span:nth-child(1){transform:translateY(8px) rotate(45deg)}
+.burger[aria-expanded="true"] span:nth-child(2){opacity:0}
+.burger[aria-expanded="true"] span:nth-child(3){transform:translateY(-8px) rotate(-45deg)}
+
+/* hero */
+.hero{background:var(--lemon);padding:calc(68px + clamp(40px,7vw,90px)) 0 0;border-bottom:3px solid var(--ink);position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:clamp(24px,4vw,60px);align-items:end}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(2.3rem,6.6vw,5.7rem);line-height:.98;letter-spacing:-.05em}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.1em}
+h1 .ln>span{display:block;transform:translateY(110%);animation:up .9s cubic-bezier(.2,.9,.2,1) forwards}
+h1 .ln:nth-child(2)>span{animation-delay:.1s}
+h1 .ln:nth-child(3)>span{animation-delay:.2s}
+@keyframes up{to{transform:none}}
+.hero p.lede{margin-top:24px;max-width:30em;font-size:clamp(1.05rem,1.6vw,1.3rem);font-weight:600;opacity:0;animation:fade .8s .55s forwards}
+@keyframes fade{to{opacity:1}}
+.pass{background:var(--snow);border:3px solid var(--ink);border-radius:26px 26px 0 0;padding:26px 26px 30px;box-shadow:8px 0 0 var(--ink);transform:rotate(2deg) translateY(40px);animation:pass-in 1s .4s cubic-bezier(.2,.9,.2,1) forwards;position:relative}
+@keyframes pass-in{to{transform:rotate(2deg) translateY(0)}}
+.pass .lbl{font-weight:700;font-size:.9rem;color:var(--ink-2)}
+.pass .num{font-family:var(--display);font-weight:900;font-size:clamp(3.4rem,7vw,5.6rem);letter-spacing:-.06em;line-height:1;margin:6px 0 4px}
+.pass .num sup{font-size:.4em;vertical-align:top;margin-left:2px;color:var(--red)}
+.pass .badge{display:inline-block;background:var(--teal);color:#fff;font-weight:800;font-size:.8rem;border-radius:999px;padding:4px 12px}
+.pass::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:14px;background:radial-gradient(circle at 10px 0,var(--lemon) 8px,transparent 9px) 0 0/20px 14px repeat-x}
+
+/* tape */
+.tapes{background:var(--ink);padding:18px 0;overflow:hidden;border-bottom:3px solid var(--ink)}
+.tape{display:flex;width:max-content;gap:14px;animation:slide 40s linear infinite}
+.tape+.tape{margin-top:14px;animation-direction:reverse;animation-duration:48s}
+.tapes:hover .tape{animation-play-state:paused}
+.chip{white-space:nowrap;display:flex;align-items:center;gap:10px;background:var(--snow);border-radius:999px;padding:8px 20px 8px 10px;font-weight:700;font-size:.95rem}
+.chip b{width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;display:grid;place-items:center;font-size:.85rem}
+.chip:nth-child(3n) b{background:var(--red)}
+.chip:nth-child(3n+1) b{background:var(--ink)}
+.chip em{font-style:normal;color:var(--ink-2);font-weight:600}
+@keyframes slide{to{transform:translateX(calc(-50% - 7px))}}
+.cap{background:var(--ink);color:#a9a9b6;font-size:.82rem;padding:0 var(--gutter) 14px;text-align:center}
+
+/* section basics */
+section{padding:clamp(70px,10vw,140px) 0}
+h2{font-family:var(--display);font-weight:900;font-size:clamp(1.8rem,4.4vw,3.4rem);line-height:1.04;letter-spacing:-.045em;max-width:16em}
+
+/* mission */
+.mission{background:var(--snow)}
+.mission-text{font-family:var(--display);font-weight:700;font-size:clamp(1.7rem,4.6vw,3.9rem);line-height:1.18;letter-spacing:-.04em;max-width:19em}
+.mission-text .w{color:#d9d6c3;transition:color .25s}
+.mission-text .w.lit{color:var(--ink)}
+.mission-text .w.hot.lit{color:var(--red)}
+.mission-note{margin-top:34px;max-width:32em;color:var(--ink-2);font-weight:500}
+
+/* journey */
+.journey{background:var(--sky);border-block:3px solid var(--ink)}
+.j-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px;align-items:end}
+.j-head p{max-width:26em;font-weight:600}
+.j-stage{position:relative;margin-top:60px}
+.j-svg{position:absolute;left:0;top:0;width:100%;height:100%;pointer-events:none}
+.j-svg path{fill:none;stroke:var(--ink);stroke-width:4;stroke-linecap:round;stroke-dasharray:10 12}
+.j-svg .drawn{stroke:var(--red);stroke-width:6;stroke-dasharray:var(--len);stroke-dashoffset:var(--off,var(--len))}
+.j-cards{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,40px)}
+.j-card{background:var(--snow);border:3px solid var(--ink);border-radius:28px;padding:28px;box-shadow:8px 8px 0 var(--ink);transition:transform .4s,box-shadow .4s}
+.j-card:nth-child(2){margin-top:60px}
+.j-card:nth-child(3){margin-top:120px}
+.j-card.on{transform:translate(-4px,-4px);box-shadow:12px 12px 0 var(--red)}
+.j-card .em{width:64px;height:64px;border-radius:50%;border:3px solid var(--ink);display:grid;place-items:center;font-size:1.8rem;margin-bottom:18px;background:var(--lemon);transition:transform .5s}
+.j-card.on .em{transform:rotate(-12deg) scale(1.1)}
+.j-card h3{font-family:var(--display);font-size:1.3rem;letter-spacing:-.03em;margin-bottom:8px;line-height:1.15}
+.j-card p{color:var(--ink-2);font-weight:500}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(6,1fr);grid-auto-rows:minmax(200px,auto);gap:18px;margin-top:54px}
+.n{border:3px solid var(--ink);border-radius:30px;padding:clamp(22px,3vw,34px);display:flex;flex-direction:column;justify-content:space-between;gap:20px;transition:transform .35s}
+.n:hover{transform:rotate(-1.2deg) scale(1.01)}
+.n b{font-family:var(--display);font-weight:900;letter-spacing:-.06em;line-height:1;display:block}
+.n span{font-weight:700;max-width:16em}
+.n1{grid-column:span 3;grid-row:span 2;background:var(--lemon)}
+.n1 b{font-size:clamp(5rem,13vw,10rem)}
+.n2{grid-column:span 3;background:var(--ink);color:var(--snow)}
+.n2 b{font-size:clamp(2.4rem,6vw,4.6rem);color:var(--lemon)}
+.n3{grid-column:span 3;background:var(--teal);color:#fff}
+.n3 b{font-size:clamp(3rem,7vw,5.4rem)}
+
+/* beliefs */
+.beliefs{background:var(--ink);color:var(--snow);border-radius:clamp(26px,5vw,70px) clamp(26px,5vw,70px) 0 0}
+.beliefs h2{color:var(--lemon)}
+.rows{margin-top:50px;border-top:2px solid #3a3a45}
+.row{border-bottom:2px solid #3a3a45;display:grid;grid-template-columns:90px 1fr 1.1fr;gap:20px;padding:28px 0;align-items:center;position:relative;transition:padding .4s}
+.row::before{content:"";position:absolute;inset:0 calc(var(--gutter)*-1);background:var(--lemon);transform:scaleY(0);transform-origin:bottom;transition:transform .4s cubic-bezier(.2,.9,.2,1);z-index:0;border-radius:18px}
+.row>*{position:relative;z-index:1;transition:color .3s}
+.row:hover::before,.row:focus-within::before{transform:scaleY(1)}
+.row:hover>*,.row:focus-within>*{color:var(--ink)}
+.row .ic{font-size:2.2rem}
+.row h3{font-family:var(--display);font-size:clamp(1.3rem,2.8vw,2.1rem);letter-spacing:-.04em;line-height:1.1}
+.row p{color:#b9b9c6;font-weight:500;max-width:30em}
+
+/* cta */
+.cta{background:var(--red);color:#fff;text-align:center;padding:clamp(70px,11vw,150px) 0;overflow:hidden;position:relative}
+.cta h2{margin-inline:auto;color:#fff;font-size:clamp(2.2rem,7vw,6rem)}
+.cta p{margin:22px auto 38px;max-width:28em;font-weight:600;font-size:1.15rem}
+.coin{position:absolute;width:clamp(46px,8vw,96px);aspect-ratio:1;border-radius:50%;background:var(--lemon);border:3px solid var(--ink);display:grid;place-items:center;font-family:var(--display);font-weight:900;color:var(--ink);font-size:clamp(1.4rem,3.4vw,2.8rem);animation:flo 6s ease-in-out infinite}
+@keyframes flo{50%{transform:translateY(-18px) rotate(10deg)}}
+footer{background:var(--ink);color:#a9a9b6;padding:40px 0 50px;font-size:.95rem}
+footer .wrap{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between}
+footer a{margin-right:18px;text-decoration:none}
+footer a:hover{color:var(--lemon)}
+
+/* responsive */
+@media (max-width:960px){
+  .hero-grid{grid-template-columns:1fr}
+  .pass{max-width:420px;box-shadow:none;transform:rotate(0);animation:none}
+  .j-cards{grid-template-columns:1fr}
+  .j-card:nth-child(2),.j-card:nth-child(3){margin-top:0}
+  .j-svg{display:none}
+  .nums{grid-template-columns:1fr 1fr}
+  .n1,.n2,.n3{grid-column:span 2;grid-row:auto}
+  .row{grid-template-columns:60px 1fr;}
+  .row p{grid-column:2}
+}
+@media (max-width:760px){
+  .burger{display:block}
+  .menu{position:absolute;top:68px;left:0;right:0;background:var(--lemon);border-bottom:3px solid var(--ink);flex-direction:column;align-items:stretch;padding:14px var(--gutter) 22px;text-align:center;display:none}
+  .menu.open{display:flex}
+  .menu a{padding:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  h1 .ln>span{transform:none}.hero p.lede{opacity:1}.pass{transform:rotate(2deg)}
+  .tape{animation:none}
+}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="wrap bar-in">
+    <a class="logo" href="#top"><i></i>Funngro</a>
+    <ul class="menu" id="menu">
+      <li><a href="#mission">Our mission</a></li>
+      <li><a href="#journey">The first rupee</a></li>
+      <li><a href="#numbers">By the numbers</a></li>
+      <li><a href="#beliefs">What we stand for</a></li>
+      <li><a class="btn sm" href="https://www.funngro.com/earn">Start earning</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <h1>
+        <span class="ln"><span>Built for</span></span>
+        <span class="ln"><span>India's young</span></span>
+        <span class="ln"><span>earners.</span></span>
+      </h1>
+      <p class="lede">Funngro was founded to give every young Indian a real first income.</p>
+    </div>
+    <div class="pass" aria-label="70 lakh creators">
+      <div class="lbl">Creators on Funngro</div>
+      <div class="num"><span id="cnt" data-to="70">70</span>L<sup>+</sup></div>
+      <span class="badge">and counting</span>
+    </div>
+  </div>
+</div>
+
+<div class="tapes" aria-hidden="true">
+  <div class="tape" id="t1"></div>
+  <div class="tape" id="t2"></div>
+</div>
+<div class="cap">Sample payouts shown for illustration.</div>
+
+<section class="mission" id="mission">
+  <div class="wrap">
+    <p class="mission-text" id="mtext">Funngro was founded to give every young Indian a real first income. Not pocket money. Not points. Real rupees, earned with real brands, paid to your UPI.</p>
+    <p class="mission-note">Earn online with India's biggest brands, from the phone you already have.</p>
+  </div>
+</section>
+
+<section class="journey" id="journey">
+  <div class="wrap">
+    <div class="j-head">
+      <h2>The path of a first rupee.</h2>
+      <p>From picking a brand campaign to money landing in your UPI. No investment needed along the way.</p>
+    </div>
+    <div class="j-stage" id="stage">
+      <svg class="j-svg" id="jsvg" viewBox="0 0 1000 500" preserveAspectRatio="none" aria-hidden="true">
+        <path id="pathBase" d="M120,90 C330,20 330,230 500,230 C680,230 680,360 880,380"/>
+        <path id="pathDraw" class="drawn" d="M120,90 C330,20 330,230 500,230 C680,230 680,360 880,380"/>
+      </svg>
+      <div class="j-cards" id="jcards">
+        <article class="j-card"><div class="em">🎯</div><h3>Pick a brand campaign</h3><p>Choose from campaigns by brands you already know.</p></article>
+        <article class="j-card"><div class="em">🎬</div><h3>Post your content</h3><p>Make it in your own style and share it.</p></article>
+        <article class="j-card"><div class="em">💸</div><h3>Get paid in UPI</h3><p>Your first income arrives straight in your account.</p></article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="numbers">
+  <div class="wrap">
+    <h2>Small start. Big reach.</h2>
+    <div class="nums" id="nums">
+      <div class="n n1"><b><span class="count" data-to="70">0</span>L</b><span>creators earning and creating with Funngro</span></div>
+      <div class="n n2"><b>₹<span class="count" data-to="15">0</span>K+</b><span>can be earned in a month, starting from ₹1K</span></div>
+      <div class="n n3"><b>₹<span class="count" data-to="0">0</span></b><span>to invest. Ever.</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="beliefs" id="beliefs">
+  <div class="wrap">
+    <h2>What we stand for.</h2>
+    <div class="rows">
+      <div class="row" tabindex="0"><div class="ic">💰</div><h3>Real money, not points</h3><p>Earnings are paid in UPI, so they're yours to spend or save.</p></div>
+      <div class="row" tabindex="0"><div class="ic">🏷️</div><h3>Real brands</h3><p>Work with some of India's biggest brands on campaigns made for young people.</p></div>
+      <div class="row" tabindex="0"><div class="ic">🚀</div><h3>A start for everyone</h3><p>No investment and no experience needed. Your first income starts with your first post.</p></div>
+      <div class="row" tabindex="0"><div class="ic">🇮🇳</div><h3>Made for India's Gen Z</h3><p>Built around how young Indians actually create, share and get paid.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="cta">
+  <span class="coin" style="left:6%;top:14%">₹</span>
+  <span class="coin" style="right:7%;top:22%;animation-delay:-2s">₹</span>
+  <span class="coin" style="left:14%;bottom:12%;animation-delay:-4s">₹</span>
+  <span class="coin" style="right:15%;bottom:10%;animation-delay:-1s">₹</span>
+  <div class="wrap">
+    <h2>Ready for your first income?</h2>
+    <p>Pick a campaign, post, and get paid in UPI.</p>
+    <a class="btn light" href="https://www.funngro.com/earn">Start earning</a>
+  </div>
+</div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Redesign concept for the Funngro About page.</span>
+    <span><a href="#mission">Mission</a><a href="#journey">Journey</a><a href="#beliefs">Values</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* menu */
+  var burger = document.getElementById('burger'), menu = document.getElementById('menu');
+  burger.addEventListener('click', function(){
+    var o = menu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', o);
+    burger.setAttribute('aria-label', o ? 'Close menu' : 'Open menu');
+  });
+  menu.addEventListener('click', function(e){
+    if(e.target.tagName === 'A'){ menu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  });
+
+  /* payout tapes (sample data) */
+  var rows = [
+    ['₹500','Credited to UPI'],['₹850','Campaign paid'],['₹1,200','Credited to UPI'],['₹300','First payout'],
+    ['₹650','Campaign paid'],['₹2,000','Credited to UPI'],['₹450','Campaign paid'],['₹900','Credited to UPI']
+  ];
+  function fill(id, offset){
+    var el = document.getElementById(id), html = '';
+    for(var r=0;r<2;r++){
+      for(var i=0;i<rows.length;i++){
+        var x = rows[(i+offset)%rows.length];
+        html += '<div class="chip"><b>✓</b>' + x[0] + ' <em>' + x[1] + '</em></div>';
+      }
+    }
+    el.innerHTML = html;
+  }
+  fill('t1',0); fill('t2',3);
+
+  /* counters */
+  function countUp(el){
+    var to = +el.dataset.to, t0 = performance.now(), d = 1400;
+    if(reduce){ el.textContent = to; return; }
+    (function tick(t){
+      var k = Math.min(1,(t-t0)/d), e = 1-Math.pow(1-k,4);
+      el.textContent = Math.round(to*e);
+      if(k<1) requestAnimationFrame(tick);
+    })(t0);
+  }
+  var cnt = document.getElementById('cnt'); cnt.textContent = '0'; countUp(cnt);
+  var cio = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cio.unobserve(e.target); } });
+  },{threshold:.6});
+  document.querySelectorAll('.count').forEach(function(c){ cio.observe(c); });
+
+  /* mission: words light up with scroll */
+  var mt = document.getElementById('mtext');
+  var hot = {first:1,income:1,real:1,rupees:1};
+  var words = mt.textContent.trim().split(/\s+/);
+  mt.setAttribute('aria-label', mt.textContent.trim());
+  mt.innerHTML = words.map(function(w){
+    var key = w.toLowerCase().replace(/[^a-z]/g,'');
+    return '<span class="w' + (hot[key] ? ' hot' : '') + '" aria-hidden="true">' + w + '</span>';
+  }).join(' ');
+  var wEls = [].slice.call(mt.querySelectorAll('.w'));
+
+  /* journey path */
+  var draw = document.getElementById('pathDraw'), stage = document.getElementById('stage');
+  var len = draw.getTotalLength();
+  draw.style.setProperty('--len', len); draw.style.setProperty('--off', len);
+  var cards = [].slice.call(document.querySelectorAll('.j-card'));
+
+  function onScroll(){
+    var vh = innerHeight;
+    var r = mt.getBoundingClientRect();
+    var p = (vh*0.85 - r.top) / (r.height + vh*0.35);
+    p = Math.max(0, Math.min(1, p));
+    var n = reduce ? wEls.length : Math.round(p * wEls.length);
+    wEls.forEach(function(w,i){ w.classList.toggle('lit', i < n); });
+
+    var s = stage.getBoundingClientRect();
+    var q = (vh*0.75 - s.top) / (s.height * 0.9);
+    q = Math.max(0, Math.min(1, q));
+    draw.style.setProperty('--off', reduce ? 0 : len * (1 - q));
+    cards.forEach(function(c,i){ c.classList.toggle('on', q > 0.08 + i*0.3); });
+  }
+  addEventListener('scroll', onScroll, {passive:true});
+  addEventListener('resize', onScroll);
+  onScroll();
+})();
+</script>
+</body>
+</html>
